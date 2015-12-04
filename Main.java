@@ -3,19 +3,36 @@
  */
 public class Main {
 
+    protected static void constructGoldCar(IBuilder builder)
+    {
+
+        builder.buildWheel(ICar.Position.FRONT_RIGHT, ICar.TypeWheel.WHEEL_D19);
+        builder.buildWheel(ICar.Position.FRONT_LEFT, ICar.TypeWheel.WHEEL_D19);
+        builder.buildWheel(ICar.Position.BACK_RIGHT, ICar.TypeWheel.WHEEL_D22);
+        builder.buildWheel(ICar.Position.BACK_LEFT, ICar.TypeWheel.WHEEL_D22);
+        builder.buildBody(ICar.Colour.GOLD);
+        builder.buildSteeringGearl(ICar.TypeSteeringGearl.STEERING_GEARL_HYDRO);
+        builder.buildEngine(ICar.TypeEngine.ENGINE_V2_4L);
+        try
+        {
+            builder.buidTransmission(ICar.TypeTransmission.TRANSMISSION_AUTO);
+        } catch (Exception e)
+        {
+            builder.buidTransmission(ICar.TypeTransmission.TRANSMISSION_MECH);
+        }
+        builder.buildSpoiler(ICar.Colour.GOLD);
+
+    }
     public static void main(String[] args)
     {
         try
         {
-//            AbsCarFactory aFactory = new MersCarFactory();
-//            AbsCarFactory aFactory2 = new AutoVazCarFactory();
-//
-//            System.out.println("2" + ICar.TypeWheel.WHEEL_D17);
-//            IProduct aProduct = aFactory.make(ICar.TypeWheel.WHEEL_D17.name());
-//            IProduct aProduct2 = aFactory2.make(ICar.TypeEngine.ENGINE_V1_6L.name());
-//            System.out.println("3" + aProduct +"\n" + aProduct2);
-            ICar carMers = new MersCar(ICar.Colour.YELLOW, ICar.TypeEngine.ENGINE_V3_2L, ICar.TypeTransmission.TRANSMISSION_AUTO, ICar.TypeSteeringGearl.STEERING_GEARL_HYDRO, ICar.TypeWheel.WHEEL_D19);
-            ICar carVaz = new AutoVazCar(ICar.Colour.GOLD, ICar.TypeEngine.ENGINE_V2_4L, ICar.TypeTransmission.TRANSMISSION_MECH, ICar.TypeSteeringGearl.STEERING_GEARL_HYDRO, ICar.TypeWheel.WHEEL_D19);
+            IBuilder mersBuilder = BuilderFactory.getMersBuilder();
+            IBuilder vazBuilder = BuilderFactory.getVazBuilder();
+            constructGoldCar(mersBuilder);
+            constructGoldCar(vazBuilder);
+            ICar carMers = mersBuilder.getCar();
+            ICar carVaz = vazBuilder.getCar();
                 System.out.println(carMers);
                 System.out.println(carVaz);
         } catch (Exception e)

@@ -2,10 +2,11 @@
  * Created by ulihtenshtein on 02.12.15.
  */
 public interface IBuilder {
-    IWheel buildWheel(ICar.TypeWheel typeWheel);
-    ISteeringGearl buildSteeringGearl(ICar.TypeSteeringGearl typeSteeringGearl);
-    IEngine buildEngine(ICar.TypeEngine typeEngine);
-    IBody buildBody(ICar.Colour colour);
-    ITransmission buidTransmission(ICar.TypeTransmission typeTransmission);
-    ISpoiler buildSpoiler(ICar.Colour colour);
+    void buildWheel(ICar.Position position, ICar.TypeWheel typeWheel);
+    void buildSteeringGearl(ICar.TypeSteeringGearl typeSteeringGearl);
+    void buildEngine(ICar.TypeEngine typeEngine);
+    void buildBody(ICar.Colour colour);
+    void buidTransmission(ICar.TypeTransmission typeTransmission);
+    void buildSpoiler(ICar.Colour colour);
+    ICar getCar();
 }

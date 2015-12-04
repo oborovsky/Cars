@@ -6,7 +6,7 @@ public class MersBuilder extends AbsBuilder {
     public MersBuilder()
     {
         mCarFactory = new MersCarFactory();
+        mCar = new MersCar();
     }
-
 
 }

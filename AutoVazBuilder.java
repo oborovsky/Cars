@@ -5,5 +5,6 @@ public class AutoVazBuilder extends AbsBuilder {
     public AutoVazBuilder()
     {
         mCarFactory = new AutoVazCarFactory();
+        mCar = new AutoVazCar();
     }
 }
