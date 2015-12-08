@@ -31,9 +31,13 @@ public class Main {
             constructGoldCar(mersBuilder);
             constructGoldCar(vazBuilder);
             ICar carMers = mersBuilder.getCar();
+            ICar carMers2 = mersBuilder.getCar();
             ICar carVaz = vazBuilder.getCar();
+            ICar carVaz2 = vazBuilder.getCar();
                 System.out.println(carMers);
+                System.out.println(carMers2);
                 System.out.println(carVaz);
+                System.out.println(carVaz2);
         } catch (Exception e)
         {
             System.out.println("error:" + e.getMessage());

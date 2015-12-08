@@ -1,12 +1,26 @@
 import java.util.HashMap;
+import java.util.Random;
 
 public class MersBuilder extends AbsBuilder {
+    @Override
+    public ICar getCar()
+    {
+        return ((MersCar)mCar).clone();
+    }
+
     protected class MersCar extends AbsCar {
         protected MersCar()
         {
             mName = "Mersedes-Benz";
             mWheels = new HashMap<>();
             mParts = new HashMap<>();
+        }
+        protected MersCar clone()
+        {
+            MersCar car = new MersCar();
+            copy(car);
+            return car;
+
         }
     }
     public MersBuilder()

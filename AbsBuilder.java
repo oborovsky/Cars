@@ -1,4 +1,5 @@
 import java.util.Map;
+import java.util.Random;
 
 public abstract class AbsBuilder implements IBuilder {
     protected Map<String, IProduct> mPartCatalog;
@@ -14,6 +15,7 @@ public abstract class AbsBuilder implements IBuilder {
     }
     protected abstract class AbsCar implements ICar {
         protected String mName;
+        protected  long mNumber;
         protected Map<Position, IWheel> mWheels;
         protected Map<String, IProduct> mParts;
 
@@ -21,6 +23,11 @@ public abstract class AbsBuilder implements IBuilder {
         public String getName()
         {
             return mName;
+        }
+        @Override
+        public long getNumber()
+        {
+            return mNumber;
         }
 
         protected void setPart(final String partName, final IProduct aPart)
@@ -32,11 +39,27 @@ public abstract class AbsBuilder implements IBuilder {
         {
             mWheels.put(position, wheel);
         }
+        protected void copy(AbsCar car)
+        {
+            car.mName = mName;
+            car.mNumber = Math.abs(((new Random()).nextLong()));
+            Object[] positions = mWheels.keySet().toArray();
+            for ( int i = 0; i < positions.length; i++)
+            {
+                car.setWheel((ICar.Position)positions[i], (IWheel)(((IProduct) mWheels.get(positions[i])).clone()));
+            }
+            Object[] keys = mParts.keySet().toArray();
+            for (int i = 0; i < keys.length; i++)
+            {
+                car.setPart((String)keys[i], mParts.get(keys[i]).clone());
+            }
 
+        }
         @Override
         public String toString()
         {
             return "Car{\n" +
+                    "mNumber='" + mNumber + '\n' +
                     "mName='" + mName + '\n' +
                     ", mWheels=" + mWheels +
                     "\n, mParts=" + mParts +

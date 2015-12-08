@@ -1,12 +1,25 @@
 import java.util.HashMap;
 
 public class AutoVazBuilder extends AbsBuilder {
+    @Override
+    public ICar getCar()
+    {
+        return ((AutoVazCar)mCar).clone();
+    }
+
     protected class AutoVazCar extends AbsCar {
         protected AutoVazCar()
         {
             mName = "Vaz";
             mWheels = new HashMap<>();
             mParts = new HashMap<>();
+        }
+        protected AutoVazCar clone()
+        {
+            AutoVazCar car = new AutoVazCar();
+            copy(car);
+            return car;
+
         }
     }
 

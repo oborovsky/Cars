@@ -7,4 +7,5 @@ public interface ICar {
     enum TypeTransmission {TRANSMISSION_AUTO, TRANSMISSION_MECH}
     enum Position {FRONT_LEFT, FRONT_RIGHT, BACK_LEFT, BACK_RIGHT}
     String getName();
+    long getNumber();
 }
