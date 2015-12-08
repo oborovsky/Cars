@@ -1,6 +1,4 @@
-/**
- * Created by ulihtenshtein on 02.12.15.
- */
+
 public class Main {
 
     protected static void constructGoldCar(IBuilder builder)
@@ -27,8 +25,9 @@ public class Main {
     {
         try
         {
-            IBuilder mersBuilder = BuilderFactory.getMersBuilder();
-            IBuilder vazBuilder = BuilderFactory.getVazBuilder();
+            BuilderFactory aFactory = BuilderFactory.getInstance();
+            IBuilder mersBuilder = aFactory.getMersBuilder();
+            IBuilder vazBuilder = aFactory.getVazBuilder();
             constructGoldCar(mersBuilder);
             constructGoldCar(vazBuilder);
             ICar carMers = mersBuilder.getCar();

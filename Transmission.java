@@ -1,6 +1,4 @@
-/**
- * Created by ulihtenshtein on 02.12.15.
- */
+
 public class Transmission implements ITransmission, IProduct {
     private ICar.TypeTransmission mTypeTransmission;
 
@@ -24,8 +22,6 @@ public class Transmission implements ITransmission, IProduct {
     @Override
     public String toString()
     {
-        return "Transmission{" +
-                "mTypeTransmission=" + mTypeTransmission +
-                "}\n";
+        return "Transmission{" + mTypeTransmission + "}\n";
     }
 }

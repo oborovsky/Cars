@@ -1,6 +1,4 @@
-/**
- * Created by ulihtenshtein on 02.12.15.
- */
+
 public class Wheel implements IWheel, IProduct {
     private ICar.TypeWheel mTypeWheel;
 
@@ -24,8 +22,6 @@ public class Wheel implements IWheel, IProduct {
     @Override
     public String toString()
     {
-        return "Wheel{" +
-                "mTypeWheel=" + mTypeWheel +
-                "}\n";
+        return "Wheel{" + mTypeWheel + "}\n";
     }
 }

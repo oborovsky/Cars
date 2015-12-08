@@ -1,6 +1,4 @@
-/**
- * Created by ulihtenshtein on 02.12.15.
- */
+
 public class Body implements IBody, IProduct {
     private ICar.Colour mColour;
 
@@ -34,8 +32,6 @@ public class Body implements IBody, IProduct {
     @Override
     public String toString()
     {
-        return "Body{" +
-                "mColour=" + mColour +
-                "}\n";
+        return "Body{" + mColour + "}\n";
     }
 }

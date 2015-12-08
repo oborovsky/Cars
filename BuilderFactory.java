@@ -1,18 +1,18 @@
-/**
- * Created by ulihtenshtein on 05.12.15.
- */
-public  class BuilderFactory {
-    private static IBuilder mMersBuilder = null;
-    private static IBuilder mVazBuilder = null;
 
-    public static IBuilder getMersBuilder()
+public  class BuilderFactory {
+    private BuilderFactory(){};
+    static BuilderFactory mBuilderFactory = null;
+    public static BuilderFactory getInstance()
     {
-        if (mMersBuilder == null) mMersBuilder = new MersBuilder();
-        return  mMersBuilder;
+        if (mBuilderFactory == null) mBuilderFactory = new BuilderFactory();
+        return mBuilderFactory;
     }
-    public static IBuilder getVazBuilder()
+    public IBuilder getMersBuilder()
     {
-        if (mVazBuilder == null) mVazBuilder = new AutoVazBuilder();
-        return mVazBuilder;
+        return  new MersBuilder();
+    }
+    public IBuilder getVazBuilder()
+    {
+        return new AutoVazBuilder();
     }
 }

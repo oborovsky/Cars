@@ -1,6 +1,4 @@
-/**
- * Created by ulihtenshtein on 02.12.15.
- */
+
 public class Spoiler implements ISpoiler, IProduct {
     private ICar.Colour mColour;
 
@@ -34,8 +32,6 @@ public class Spoiler implements ISpoiler, IProduct {
     @Override
     public String toString()
     {
-        return "Spoiler{" +
-                "mColour=" + mColour +
-                "}\n";
+        return "Spoiler{" + mColour + "}\n";
     }
 }

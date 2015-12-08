@@ -1,6 +1,4 @@
-/**
- * Created by ulihtenshtein on 02.12.15.
- */
+
 public class Engine implements IProduct, IEngine {
     private ICar.TypeEngine mTypeEngine;
     Engine(ICar.TypeEngine typeEngine)
@@ -22,8 +20,6 @@ public class Engine implements IProduct, IEngine {
     @Override
     public String toString()
     {
-        return "Engine{" +
-                "mTypeEngine=" + mTypeEngine +
-                "}\n";
+        return "Engine{" + mTypeEngine + "}\n";
     }
 }

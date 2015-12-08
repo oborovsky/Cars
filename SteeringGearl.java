@@ -1,6 +1,4 @@
-/**
- * Created by ulihtenshtein on 02.12.15.
- */
+
 public class SteeringGearl implements ISteeringGearl, IProduct {
     private ICar.TypeSteeringGearl mTypeSteeringGearl;
     public SteeringGearl(ICar.TypeSteeringGearl typeSteeringGearl)
@@ -23,8 +21,6 @@ public class SteeringGearl implements ISteeringGearl, IProduct {
     @Override
     public String toString()
     {
-        return "SteeringGearl{" +
-                "mTypeSteeringGearl=" + mTypeSteeringGearl +
-                "}\n";
+        return "SteeringGearl{" + mTypeSteeringGearl + "}\n";
     }
 }
